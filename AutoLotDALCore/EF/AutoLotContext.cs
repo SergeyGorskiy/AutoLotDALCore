@@ -1,7 +1,6 @@
 ﻿using System;
 using AutoLotDALCore.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Diagnostics;
 
 namespace AutoLotDALCore.EF
 {

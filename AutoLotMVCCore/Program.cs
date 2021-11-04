@@ -18,7 +18,7 @@ namespace AutoLotMVCCore
                 MyDataInitializer.RecreateDatabase(context);
                 MyDataInitializer.InitializeData(context);
             }
-            
+            webHost.Run();
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

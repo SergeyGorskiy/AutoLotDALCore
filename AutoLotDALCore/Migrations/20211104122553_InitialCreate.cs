@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace AutoLotDALCore.Migrations
 {
-    public partial class Initial : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -11,12 +11,12 @@ namespace AutoLotDALCore.Migrations
                 name: "Cars",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Make = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    Color = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    PetName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    Timestamp = table.Column<byte[]>(type: "rowversion", rowVersion: true, nullable: true)
+                    Timestamp = table.Column<byte[]>(rowVersion: true, nullable: true),
+                    Make = table.Column<string>(maxLength: 50, nullable: true),
+                    Color = table.Column<string>(maxLength: 50, nullable: true),
+                    PetName = table.Column<string>(maxLength: 50, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -27,11 +27,11 @@ namespace AutoLotDALCore.Migrations
                 name: "CreditRisks",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    Timestamp = table.Column<byte[]>(type: "rowversion", rowVersion: true, nullable: true)
+                    Timestamp = table.Column<byte[]>(rowVersion: true, nullable: true),
+                    FirstName = table.Column<string>(maxLength: 50, nullable: true),
+                    LastName = table.Column<string>(maxLength: 50, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -42,11 +42,11 @@ namespace AutoLotDALCore.Migrations
                 name: "Customers",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    LastName = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    Timestamp = table.Column<byte[]>(type: "rowversion", rowVersion: true, nullable: true)
+                    Timestamp = table.Column<byte[]>(rowVersion: true, nullable: true),
+                    FirstName = table.Column<string>(maxLength: 50, nullable: true),
+                    LastName = table.Column<string>(maxLength: 50, nullable: true)
                 },
                 constraints: table =>
                 {
@@ -57,11 +57,11 @@ namespace AutoLotDALCore.Migrations
                 name: "Orders",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CustomerId = table.Column<int>(type: "int", nullable: false),
-                    CarId = table.Column<int>(type: "int", nullable: false),
-                    Timestamp = table.Column<byte[]>(type: "rowversion", rowVersion: true, nullable: true)
+                    Timestamp = table.Column<byte[]>(rowVersion: true, nullable: true),
+                    CustomerId = table.Column<int>(nullable: false),
+                    CarId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
